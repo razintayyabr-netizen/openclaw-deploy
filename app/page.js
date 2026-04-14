@@ -238,6 +238,114 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ORACLE FREE TIER DEPLOY */}
+      <section style={{ padding: '80px 24px', borderTop: '1px solid rgba(255,255,255,0.04)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 30% 50%, rgba(239,68,68,0.06) 0%, transparent 60%)' }} />
+        <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 999, background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.2)', fontSize: 13, color: '#EF4444', marginBottom: 16, fontFamily: 'JetBrains Mono, monospace' }}>
+              🔥 FREE FOREVER
+            </div>
+            <h2 className="section-title" style={{ fontSize: 40, fontWeight: 700, letterSpacing: '-0.03em' }}>Deploy on Oracle Cloud Free Tier</h2>
+            <p style={{ fontSize: 16, color: '#6B6B7B', marginTop: 8 }}>4 ARM CPUs · 24GB RAM · 200GB Storage · $0/month · Runs 24/7</p>
+          </div>
+
+          {/* Oracle Specs Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 40 }}>
+            {[
+              { icon: '⚡', label: 'ARM CPUs', val: '4 OCPU', highlight: true },
+              { icon: '🧠', label: 'RAM', val: '24 GB', highlight: true },
+              { icon: '💾', label: 'Storage', val: '200 GB', highlight: false },
+              { icon: '💰', label: 'Cost', val: '$0/mo', highlight: true },
+              { icon: '⏰', label: 'Uptime', val: '24/7 Always On', highlight: false },
+            ].map((r, i) => (
+              <div key={i} style={{ background: 'var(--surface)', border: r.highlight ? '1px solid rgba(239,68,68,0.3)' : '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: 20, textAlign: 'center' }}>
+                <div style={{ fontSize: 28, marginBottom: 8 }}>{r.icon}</div>
+                <div style={{ fontSize: 13, color: '#6B6B7B', marginBottom: 4 }}>{r.label}</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: r.highlight ? '#EF4444' : '#E8E8ED' }}>{r.val}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Oracle Deploy Steps */}
+          <div style={{ display: 'grid', gap: 12 }}>
+            <div className="step-card" style={{ display: 'grid', gridTemplateColumns: '40px 1fr', gap: 16, alignItems: 'start' }}>
+              <div style={{ width: 32, height: 32, borderRadius: 8, background: 'rgba(239,68,68,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, color: '#EF4444' }}>1</div>
+              <div>
+                <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>Create Oracle Cloud Account</h4>
+                <p style={{ fontSize: 13, color: '#6B6B7B' }}>Sign up at <a href="https://cloud.oracle.com/free" target="_blank" style={{ color: '#A855F7' }}>cloud.oracle.com/free</a> — requires email + credit card (won't be charged)</p>
+              </div>
+            </div>
+            <div className="step-card" style={{ display: 'grid', gridTemplateColumns: '40px 1fr', gap: 16, alignItems: 'start' }}>
+              <div style={{ width: 32, height: 32, borderRadius: 8, background: 'rgba(239,68,68,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, color: '#EF4444' }}>2</div>
+              <div>
+                <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>Create ARM Instance</h4>
+                <p style={{ fontSize: 13, color: '#6B6B7B', marginBottom: 10 }}>Image: Ubuntu 24.04 (aarch64) · Shape: VM.Standard.A1.Flex · 2-4 OCPU · 12-24GB RAM · 50-200GB Boot</p>
+                <div className="code-block" style={{ fontSize: 12 }}><div className="code-body" style={{ padding: '8px 14px' }}><span className="output">Shape: VM.Standard.A1.Flex</span>\n<span className="output">Image: Ubuntu 24.04 aarch64</span>\n<span className="output">OCPU: 4 · RAM: 24GB · Disk: 200GB</span></div></div>
+              </div>
+            </div>
+            <div className="step-card" style={{ display: 'grid', gridTemplateColumns: '40px 1fr', gap: 16, alignItems: 'start' }}>
+              <div style={{ width: 32, height: 32, borderRadius: 8, background: 'rgba(239,68,68,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, color: '#EF4444' }}>3</div>
+              <div>
+                <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>SSH In & Install</h4>
+                <div className="code-block" style={{ fontSize: 12, marginTop: 8 }}>
+                  <div className="code-body" style={{ padding: '10px 14px', lineHeight: 1.8 }}>
+                    <div><span className="prompt">$</span> <span className="cmd">ssh ubuntu@YOUR_PUBLIC_IP</span></div>
+                    <div><span className="prompt">$</span> <span className="cmd">sudo apt update && sudo apt upgrade -y</span></div>
+                    <div><span className="prompt">$</span> <span className="cmd">curl -fsSL https://openclaw.ai/install.sh | bash</span></div>
+                    <div><span className="prompt">$</span> <span className="cmd">openclaw onboard</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="step-card" style={{ display: 'grid', gridTemplateColumns: '40px 1fr', gap: 16, alignItems: 'start' }}>
+              <div style={{ width: 32, height: 32, borderRadius: 8, background: 'rgba(239,68,68,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 700, color: '#EF4444' }}>4</div>
+              <div>
+                <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>Connect with Ollama Cloud</h4>
+                <p style={{ fontSize: 13, color: '#6B6B7B', marginBottom: 10 }}>Use Ollama cloud models for free — no local GPU needed. Set your AI provider during onboard.</p>
+                <div className="code-block" style={{ fontSize: 12 }}>
+                  <div className="code-body" style={{ padding: '10px 14px', lineHeight: 1.8 }}>
+                    <div><span className="output">? Choose AI provider:</span> <span className="flag">Ollama (Cloud)</span></div>
+                    <div><span className="output">? Model:</span> <span className="flag">glm-5.1 / llama3 / mistral</span></div>
+                    <div><span className="output">✓ Connected — send messages to your bot!</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tip */}
+          <div style={{ marginTop: 24, padding: '16px 20px', borderRadius: 12, background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.15)', fontSize: 13, color: '#9CA3AF' }}>
+            💡 <strong style={{ color: '#E8E8ED' }}>Pro tip:</strong> If instance creation fails with "Out of capacity" — retry during off-peak hours or try a different availability domain. Oracle free tier is popular!
+          </div>
+        </div>
+      </section>
+
+      {/* DEPLOY FOR A FRIEND */}
+      <section style={{ padding: '60px 24px', background: 'var(--surface)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <div style={{ fontSize: 12, color: '#22C55E', letterSpacing: '0.2em', textTransform: 'uppercase', fontFamily: 'JetBrains Mono, monospace', marginBottom: 8 }}>// Share with friends</div>
+            <h2 className="section-title" style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.03em' }}>Deploy for a Friend</h2>
+            <p style={{ fontSize: 16, color: '#6B6B7B', marginTop: 8 }}>Each Oracle account = 1 free instance. You + your friend = 2 free AI assistants.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+            <div style={{ background: 'var(--bg)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 16, padding: 28 }}>
+              <div style={{ fontSize: 24, marginBottom: 12 }}>🧑‍💻</div>
+              <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>Your Instance</h4>
+              <p style={{ fontSize: 13, color: '#6B6B7B', lineHeight: 1.5 }}>Your Oracle account. 4 OCPU + 24GB RAM. Your API keys. Your data. 100% private.</p>
+              <div style={{ marginTop: 12, fontSize: 12, fontFamily: 'JetBrains Mono, monospace', color: '#22C55E' }}>✓ Your AI, your rules</div>
+            </div>
+            <div style={{ background: 'var(--bg)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 16, padding: 28 }}>
+              <div style={{ fontSize: 24, marginBottom: 12 }}>👥</div>
+              <h4 style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>Friend's Instance</h4>
+              <p style={{ fontSize: 13, color: '#6B6B7B', lineHeight: 1.5 }}>Their Oracle account. Same free specs. They control their AI, you just help set it up.</p>
+              <div style={{ marginTop: 12, fontSize: 12, fontFamily: 'JetBrains Mono, monospace', color: '#22C55E' }}>✓ Independent & private</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SYSTEM REQUIREMENTS */}
       <section style={{ padding: '60px 24px', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
         <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
