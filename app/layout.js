@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "OpenClaw — Your Personal AI Assistant",
   description: "Deploy your own AI assistant in 5 minutes. Connect to WhatsApp, Telegram, Discord. Powered by Claude, GPT, Gemini, or local models.",
   keywords: ["OpenClaw", "AI assistant", "deploy AI", "WhatsApp AI", "Telegram bot", "AI automation", "personal AI"],

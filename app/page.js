@@ -32,8 +32,8 @@ const steps = [
   },
   {
     num: '05',
-    title: 'You're Live',
-    desc: 'Send a message. Your AI assistant responds. That's it.',
+    title: "You're Live",
+    desc: "Send a message. Your AI assistant responds. That's it.",
     code: `✓ Connected to Telegram\n✓ AI provider: Claude\n✓ OpenClaw is running\n\n→ Send "Hey" to your bot!`,
     lang: 'text'
   },
@@ -41,11 +41,11 @@ const steps = [
 
 const features = [
   { icon: '🔒', title: 'Your Keys, Your Machine', desc: 'API keys never leave your device. Everything runs locally. Zero cloud dependency.' },
-  { icon: '💬', title: 'Multi-Platform', desc: 'WhatsApp, Telegram, Discord, WebChat — connect them all simultaneously.' },
-  { icon: '🧠', title: 'Any AI Model', desc: 'Claude, GPT-4o, Gemini, Llama, Mistral — switch providers anytime.' },
-  { icon: '⚡', title: 'Skills System', desc: 'GitHub issues, web search, image analysis, weather — extend with skills.' },
+  { icon: '💬', title: 'Multi-Platform', desc: 'WhatsApp, Telegram, Discord, WebChat - connect them all simultaneously.' },
+  { icon: '🧠', title: 'Any AI Model', desc: 'Claude, GPT-4o, Gemini, Llama, Mistral - switch providers anytime.' },
+  { icon: '⚡', title: 'Skills System', desc: 'GitHub issues, web search, image analysis, weather - extend with skills.' },
   { icon: '🔄', title: 'Always On', desc: 'Runs as a background service. Your assistant never sleeps.' },
-  { icon: '🎨', title: 'Fully Customizable', desc: 'Personality, tone, memory, tools — shape your AI however you want.' },
+  { icon: '🎨', title: 'Fully Customizable', desc: 'Personality, tone, memory, tools - shape your AI however you want.' },
   { icon: '📱', title: 'Mobile Companion', desc: 'iOS and Android apps. Scan QR to pair your phone.' },
   { icon: '🌐', title: 'Web Dashboard', desc: 'Built-in web UI for configuration, logs, and monitoring.' },
   { icon: '🛡️', title: 'Open Source', desc: 'Audit the code. Fork it. Contribute. No black boxes.' },
